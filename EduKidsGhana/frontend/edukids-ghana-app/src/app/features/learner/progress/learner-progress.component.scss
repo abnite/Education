@@ -1,0 +1,107 @@
+.progress-page { max-width: 860px; margin: 0 auto; }
+
+.page-header {
+  margin-bottom: 2rem;
+  h1 { font-family: 'Fredoka One', cursive; font-size: 2rem; color: #1a1a1a; margin-bottom: 0.25rem; }
+  p  { color: #666; }
+}
+
+.overall-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+
+.stat-big {
+  background: linear-gradient(135deg, #FF6B35, #f7931e);
+  color: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(255,107,53,0.25);
+
+  .stat-number { display: block; font-family: 'Fredoka One', cursive; font-size: 2.5rem; line-height: 1; }
+  .stat-label  { font-size: 0.85rem; opacity: 0.9; margin-top: 0.3rem; display: block; }
+}
+
+.subject-mastery {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+  .subject-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+
+    .subject-icon { font-size: 1.8rem; }
+    h3 { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: #1a1a1a; flex: 1; }
+    .subject-avg { font-size: 0.85rem; color: #888; font-weight: 700; }
+  }
+}
+
+.topics-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.topic-row {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .topic-name { font-size: 0.9rem; font-weight: 600; color: #333; }
+
+  .mastery-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .mastery-bar {
+      flex: 1;
+      height: 10px;
+      background: #f0f0f0;
+      border-radius: 5px;
+      overflow: hidden;
+
+      .mastery-fill {
+        height: 100%;
+        border-radius: 5px;
+        transition: width 0.5s ease;
+
+        &.fill-none       { background: #ddd; }
+        &.fill-emerging   { background: #e74c3c; }
+        &.fill-developing { background: #f39c12; }
+        &.fill-proficient { background: #3498db; }
+        &.fill-mastered   { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+      }
+    }
+
+    .mastery-value { font-size: 0.8rem; color: #888; min-width: 35px; text-align: right; }
+  }
+
+  .mastery-level-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+
+    &.level-notstarted  { background: #f0f0f0; color: #aaa; }
+    &.level-emerging    { background: #ffeaea; color: #e74c3c; }
+    &.level-developing  { background: #fff3e0; color: #f39c12; }
+    &.level-proficient  { background: #e8f4ff; color: #3498db; }
+    &.level-mastered    { background: #f0fff4; color: #27ae60; }
+  }
+}
+
+.loading { text-align: center; padding: 3rem; color: #666; font-size: 1.1rem; }

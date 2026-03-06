@@ -1,0 +1,7 @@
+@use '../auth-shared' as auth;
+
+.auth-page { @include auth.page-layout; }
+.auth-card { @include auth.card; }
+.auth-header { @include auth.header; }
+.auth-form { @include auth.form-styles; }
+.auth-footer { @include auth.footer; }

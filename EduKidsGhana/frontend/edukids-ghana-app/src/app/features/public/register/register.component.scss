@@ -1,0 +1,43 @@
+@use '../auth-shared' as auth;
+
+.auth-page { @include auth.page-layout; }
+
+.auth-card {
+  @include auth.card;
+  max-width: 500px;
+}
+
+.auth-header { @include auth.header; }
+
+.auth-form {
+  @include auth.form-styles;
+
+  .name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  select {
+    padding: 0.8rem 1rem;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    background: white;
+    transition: border-color 0.2s;
+
+    &:focus { border-color: #FF6B35; }
+  }
+
+  .optional {
+    color: #aaa;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
+
+.auth-footer { @include auth.footer; }

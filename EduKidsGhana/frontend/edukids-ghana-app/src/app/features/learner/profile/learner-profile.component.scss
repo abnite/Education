@@ -1,0 +1,121 @@
+.profile-page { max-width: 700px; margin: 0 auto; }
+
+.page-header {
+  margin-bottom: 2rem;
+  h1 { font-family: 'Fredoka One', cursive; font-size: 2rem; color: #1a1a1a; }
+}
+
+.profile-content { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.avatar-section {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+  h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 1rem; color: #1a1a1a; }
+
+  .avatar-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .avatar-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.75rem 1rem;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover { border-color: #FF6B35; background: #fff8f5; transform: scale(1.08); }
+    &.selected { border-color: #FF6B35; background: #fff0ea; }
+
+    .avatar-emoji { font-size: 2.5rem; }
+    .avatar-name  { font-size: 0.75rem; color: #666; font-weight: 700; }
+  }
+}
+
+.profile-info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+  h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 1rem; color: #1a1a1a; }
+
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid #f5f5f5;
+    &:last-child { border-bottom: none; }
+
+    .info-label { font-size: 0.88rem; color: #888; font-weight: 600; }
+    .info-value { font-size: 0.95rem; font-weight: 800; color: #1a1a1a; }
+  }
+}
+
+.preference-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+  h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 1rem; color: #1a1a1a; }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .toggle {
+    width: 52px;
+    height: 28px;
+    background: #ddd;
+    border-radius: 14px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.25s;
+
+    &.on {
+      background: #27ae60;
+      .toggle-thumb { transform: translateX(24px); }
+    }
+
+    .toggle-thumb {
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.25s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+.save-banner {
+  background: #f0fff4;
+  border: 1px solid #a8efc0;
+  color: #27ae60;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  animation: slide-up 0.3s ease;
+}
+
+@keyframes slide-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
