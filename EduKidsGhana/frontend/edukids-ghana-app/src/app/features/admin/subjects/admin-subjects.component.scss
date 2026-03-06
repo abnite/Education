@@ -1,0 +1,37 @@
+.admin-subjects { max-width: 900px; margin: 0 auto; }
+.page-header { margin-bottom: 2rem; h1 { font-family: 'Fredoka One', cursive; font-size: 2rem; color: #1a1a1a; } }
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.subject-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+  &:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .subject-header {
+    padding: 1.25rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; }
+    .code-badge { background: rgba(255,255,255,0.25); padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; }
+  }
+
+  .subject-body {
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .stat-row { display: flex; justify-content: space-between; font-size: 0.82rem; color: #666; }
+  }
+}
+
+.loading { text-align: center; padding: 3rem; color: #666; }

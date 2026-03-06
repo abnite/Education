@@ -10,18 +10,18 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./features/auth/login/login.component').then(m => m.LoginComponent)
+    loadComponent: () => import('./features/public/login/login.component').then(m => m.LoginComponent)
   },
   {
     path: 'register',
-    loadComponent: () => import('./features/auth/register/register.component').then(m => m.RegisterComponent)
+    loadComponent: () => import('./features/public/register/register.component').then(m => m.RegisterComponent)
   },
 
   // Learner routes
   {
     path: 'learner',
     canActivate: [authGuard],
-    loadChildren: () => import('./features/learner/learner.routes').then(m => m.learnerRoutes)
+    loadChildren: () => import('./features/learner/learner.routes').then(m => m.LEARNER_ROUTES)
   },
 
   // Parent routes
@@ -29,7 +29,7 @@ export const routes: Routes = [
     path: 'parent',
     canActivate: [authGuard, roleGuard],
     data: { roles: ['Parent', 'Admin'] },
-    loadChildren: () => import('./features/parent/parent.routes').then(m => m.parentRoutes)
+    loadChildren: () => import('./features/parent/parent.routes').then(m => m.PARENT_ROUTES)
   },
 
   // Admin routes
@@ -37,7 +37,7 @@ export const routes: Routes = [
     path: 'admin',
     canActivate: [authGuard, roleGuard],
     data: { roles: ['Admin'] },
-    loadChildren: () => import('./features/admin/admin.routes').then(m => m.adminRoutes)
+    loadChildren: () => import('./features/admin/admin.routes').then(m => m.ADMIN_ROUTES)
   },
 
   { path: '**', redirectTo: '' }

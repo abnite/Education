@@ -1,0 +1,100 @@
+.analytics-page { max-width: 1000px; margin: 0 auto; }
+
+.page-header {
+  margin-bottom: 2rem;
+  h1 { font-family: 'Fredoka One', cursive; font-size: 2rem; color: #1a1a1a; margin-bottom: 0.2rem; }
+  p  { color: #888; }
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  @media (max-width: 700px) { grid-template-columns: 1fr; }
+}
+
+.analytics-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+
+  &.wide { grid-column: 1 / -1; }
+
+  h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: #1a1a1a; margin-bottom: 1rem; }
+}
+
+.activity-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 140px;
+  padding-bottom: 24px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #f0f0f0;
+  }
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1;
+
+  .activity-bar {
+    width: 100%;
+    background: linear-gradient(180deg, #FF6B35, #f7931e);
+    border-radius: 4px 4px 0 0;
+    min-height: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: linear-gradient(180deg, #e55a25, #e08018); }
+
+    .bar-tooltip {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a1a1a;
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-bottom: 4px;
+    }
+
+    &:hover .bar-tooltip { display: block; }
+  }
+
+  .bar-date { font-size: 0.7rem; color: #aaa; }
+}
+
+.metric-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 0.9rem;
+
+  &:last-child { border-bottom: none; }
+  span   { color: #666; }
+  strong { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: #FF6B35; }
+}
+
+.loading { text-align: center; padding: 3rem; color: #666; }
